@@ -1,6 +1,6 @@
 # RSI Oversold Stock Scanner / RSI超卖股票扫描器
 
-![Demo Screenshot](rsi.jpg)
+![Demo Screenshot](rsi.png)
 
 ## Description (English)
 
@@ -29,6 +29,12 @@ The primary focus for the Chinese market tools is identifying stocks oversold on
 *   **Dual Data Sources (China):** Uses `yfinance` with `akshare` fallback for Chinese stocks, increasing data reliability. / **双数据源(中国市场)：** 对中国股票使用 `yfinance` 并以 `akshare` 作为备用，提高数据可靠性。
 *   **CLI & GUI Options:** Provides both command-line scripts and a graphical interface (for China scan). / **命令行与图形界面选项：** 提供命令行脚本和图形界面（用于中国市场扫描）。
 *   **Real-time GUI Updates (China):** The GUI table updates immediately when a signal is found. / **实时GUI更新(中国市场)：** 图形界面表格在发现信号时立即更新。
+*   **Sector Filtering:** Filter stocks by specific sectors with a comprehensive sector selection interface. / **板块筛选：** 通过全面的板块选择界面按特定板块筛选股票。
+*   **Market Cap & Earnings Growth Filtering:** Focus on stocks with market cap between 100-300亿 and positive earnings growth. / **市值和盈利增长筛选：** 专注于市值在100-300亿之间且盈利增长为正的股票。
+*   **Overbought Signals:** Identify overbought conditions (RSI > 70) across multiple timeframes. / **超买信号：** 识别多个时间周期上的超买状态（RSI > 70）。
+*   **Save/Load Functionality:** Save scanning progress to a file and resume later. / **保存/加载功能：** 将扫描进度保存到文件并稍后恢复。
+*   **Pause/Resume Scanning:** Pause and resume the scanning process at any time. / **暂停/恢复扫描：** 随时暂停和恢复扫描过程。
+*   **Trade War Recommended Sectors:** Quick selection of recommended sectors during trade war conditions. / **贸易战推荐板块：** 在贸易战条件下快速选择推荐板块。
 
 ## Requirements / 依赖环境
 
@@ -66,9 +72,18 @@ The primary focus for the Chinese market tools is identifying stocks oversold on
     ```bash
     python python/gui_china.py
     ```
-*   Click "Start Scan". / 点击 "Start Scan"。
+*   Click "Start Scan" to begin scanning. / 点击 "Start Scan" 开始扫描。
 *   The log area shows scan progress and details. / 日志区域显示扫描进度和详情。
-*   The table updates in real-time, showing tickers with at least a Daily oversold signal and their status ("Yes"/"No") on Weekly and Monthly charts. / 表格实时更新，显示至少日线超卖的股票及其在周线和月线上的状态（"Yes"/"No"）。
+*   The tables update in real-time, showing:
+    *   **Oversold Signals:** Stocks with at least a Daily oversold signal. / **超卖信号：** 至少日线超卖的股票。
+    *   **Filtered Oversold Signals:** Stocks meeting market cap and earnings growth criteria. / **筛选后的超卖信号：** 符合市值和盈利增长标准的股票。
+    *   **Overbought Signals:** Stocks with at least a Daily overbought signal. / **超买信号：** 至少日线超买的股票。
+    *   **Filtered Overbought Signals:** Overbought stocks meeting market cap and earnings growth criteria. / **筛选后的超买信号：** 符合市值和盈利增长标准的超买股票。
+*   Use the "Pause Scan" button to temporarily stop scanning. / 使用 "Pause Scan" 按钮暂时停止扫描。
+*   Use the "Save Progress" button to save the current state to a JSON file. / 使用 "Save Progress" 按钮将当前状态保存到JSON文件。
+*   Use the "Load Progress" button to resume from a previously saved state. / 使用 "Load Progress" 按钮从之前保存的状态恢复。
+*   In the "Sector Filters" tab, select specific sectors to filter by, or use "显示所有板块 (不筛选)" to show all sectors. / 在 "Sector Filters" 选项卡中，选择特定板块进行筛选，或使用 "显示所有板块 (不筛选)" 显示所有板块。
+*   Use the "贸易战推荐板块" button to quickly select recommended sectors for trade war conditions. / 使用 "贸易战推荐板块" 按钮快速选择贸易战条件下的推荐板块。
 
 ## Disclaimer / 免责声明
 
